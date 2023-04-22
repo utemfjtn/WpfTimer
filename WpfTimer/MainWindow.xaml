@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfTimer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTimer"
+        mc:Ignorable="d" Background="#FF000000" Topmost="True" WindowStyle="None" 
+        Title="计时器" Height="45" MinHeight="40" Width="175" MinWidth="120" Margin="0">
+    <Grid Background="#FF000000" Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="75" />
+            <ColumnDefinition Width="45" />
+        </Grid.ColumnDefinitions>
+        <TextBox Name="TBTimer" Margin="0" Padding="0" MinWidth="50" Background="#FF000000" Foreground="#FFFFFFFF" FontSize="22" 
+                 Text="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                 PreviewMouseLeftButtonDown="TBTimer_PreviewMouseLeftButtonDown" KeyDown="TBTimer_KeyDown">
+            <FrameworkElement.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="置顶" Click="Menu_TopMostTrue_Click" />
+                    <MenuItem Header="取消置顶" Click="Menu_TopMostFalse_Click" />
+                    <MenuItem Header="标题显示" Click="Menu_TitleShow_Click" />
+                    <MenuItem Header="标题隐藏" Click="Menu_TitleHide_Click" />
+                    <MenuItem Header="关闭程序" Click="Menu_Exit_Click" />
+                </ContextMenu>
+            </FrameworkElement.ContextMenu>
+        </TextBox>
+        <Button Name="BTMain" Margin="0" Padding="0" HorizontalContentAlignment="Left" Background="#FF000000" Foreground="#FFFFFFFF"
+                Content="开始计时" Grid.Column="1" FontSize="10" Click="BTMain_Click">
+            <FrameworkElement.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="Menu_TopMostTrue" Header="置顶" Click="Menu_TopMostTrue_Click" />
+                    <MenuItem Name="Menu_TopMostFalse" Header="取消置顶" Click="Menu_TopMostFalse_Click" />
+                    <MenuItem Name="Menu_TitleShow" Header="标题显示" Click="Menu_TitleShow_Click" />
+                    <MenuItem Name="Menu_TitleHide" Header="标题隐藏" Click="Menu_TitleHide_Click" />
+                    <MenuItem Name="Menu_Exit" Header="关闭程序" Click="Menu_Exit_Click" />
+                </ContextMenu>
+            </FrameworkElement.ContextMenu>
+        </Button>
+    </Grid>
+</Window>
